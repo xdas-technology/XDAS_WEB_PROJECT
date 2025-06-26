@@ -1,0 +1,68 @@
+"use client"
+import React, { useRef, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const ScrollVariableChangerTS: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
+
+  const animatedValue = useRef({ val: 0 }).current;
+
+  useGSAP(() => {
+    gsap.to(animatedValue, {
+      val: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        onUpdate: (self) => {
+          setScrollProgress(animatedValue.val);
+        },
+      },
+    });
+  }, { scope: sectionRef, dependencies: [] });
+
+  return (
+    <div>
+      <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
+        <h2>Scroll Down to See Variable Change</h2>
+      </div>
+
+      <section
+        ref={sectionRef}
+        style={{
+          height: '200vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#e0f7fa',
+          position: 'relative',
+        }}
+      >
+        <h1 style={{
+          fontSize: '4em',
+          color: '#00796b',
+          position: 'sticky',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          textAlign: 'center',
+        }}>
+          Scroll Progress: {scrollProgress}
+        </h1>
+      </section>
+
+      <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
+        <h2>End of Demo</h2>
+      </div>
+    </div>
+  );
+};
+
+export default ScrollVariableChangerTS;
