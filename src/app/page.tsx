@@ -1,5 +1,4 @@
 import StackCard from "@/component/StackCard";
-import Hero from "@/component/Hero";
 import ScrollProductCard from "@/component/ScrollProductCard";
 import Header from "@/component/Header";
 import ThreeDHeader from "@/component/ThreeDHero";
@@ -11,7 +10,7 @@ export default function Home() {
       <div>
       <Header/>
       <ThreeDHeader/>
-      <Hero/>
+      
       <StackCard/>
       <ScrollProductCard/>
       <Video/>
