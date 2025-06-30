@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { Observer } from "gsap/all";
 import { useRef, useState } from "react";
+import Image from "next/image";
 gsap.registerPlugin(Observer);
 
 const Header = () => {
@@ -40,8 +41,7 @@ const Header = () => {
     return (
         <div ref={headerRef} className="sticky h-[4rem] top-0 z-30 w-full">
             <div className="h-full bg-black text-gray-300 flex items-center justify-between px-4">
-                <img className="h-8 m-3" src="XDAS" alt="XDAS" /> 
-
+                <Image className="m-4" src="/favicon/web-app-manifest-512x512-removebg-preview.png" alt="XDAS" height={25} width={50}/>
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="text-gray-300 focus:outline-none">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

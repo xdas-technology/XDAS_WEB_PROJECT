@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 const data = [
   {
     end: false,
-    img: "../../services/ai-and-automation.webp",
+    img: "../../services/pattern.png",
     thumbnailTitle: "Company",
     title: "What we Did",
     description: `We're proud to have partnered with Microsoft, providing them with a range of our services.

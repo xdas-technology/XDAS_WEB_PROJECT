@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from 'gsap/SplitText';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Euler } from 'three';
+import { useWindowWidth } from '@/utils/useWindowWidth';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 interface GltfModelProps {
@@ -71,6 +72,7 @@ function Experience() {
   const newPrologueText = "We excel in crafting high-quality software solutions tailored to your needs. From intuitive web platforms and engaging mobile applications to comprehensive educational PC software, our expertise spans the full spectrum of software development, ensuring innovative and reliable products every time.";
 
   useGSAP(() => {
+
     if (!canvasRef.current || !heroRef.current || !prologueTextRef.current || !xdasRef.current) {
       console.warn("One or more refs are null, animations might not initialize.");
       return;
@@ -192,13 +194,13 @@ function Experience() {
       </Canvas>
       <div
         ref={heroRef}
-        className="h-[200vh] w-[100%] bg-black text-white text-center"
+        className="h-[200vh] w-[100%] bg-gradient-to-b from-black to-xdas-purple-800 text-white text-center"
       >
         <div
           className="w-full h-[100vh] flex flex-col md:flex-row justify-center items-center p-4 md:p-8 lg:p-16 gap-8"
         >
           <h1
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-[25vh] overflow-hidden leading-none"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[25vh] overflow-hidden leading-nones "
             ref={xdasRef}
             data-original-text="XDAS"
           >
@@ -206,7 +208,7 @@ function Experience() {
           </h1>
           <div
             ref={prologueTextRef}
-            className="w-full max-w-md md:w-1/2 lg:w-[20vw] text-base md:text-xl lg:text-2xl text-justify"
+            className="w-full font-EBGaramond  max-w-md md:w-1/2 lg:w-[20vw] text-base md:text-xl lg:text-2xl text-justify"
           >
             What's past is prologue; what to come, in yours and my discharge, lies rich in hope.
           </div>

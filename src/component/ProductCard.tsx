@@ -43,21 +43,21 @@ const ProductCard = ({end,img,thumbnailTitle, title , description}:props) => {
         overflow-hidden        
         md:aspect-w-auto md:aspect-h-auto 
       `}>      
-      <div ref={imageRef} className={`w-165 h-138  overflow-hidden bg-no-repeat bg-cover bg-center`}
+      <div ref={imageRef} className={` w-[90vw] h-[81.6vw] sm:w-165 sm:h-138  overflow-hidden bg-no-repeat bg-cover bg-center`}
       style={{backgroundImage:`url('${img}')`}}
       >
       <div ref={contentRef} className="h-[200%] w-full " onMouseEnter={onHover} onMouseLeave={onHoverLeave} onTouchMove ={onHover} onTouchEnd={onHoverLeave}>
       <div className="h-[50%] w-[100%] flex flex-col justify-end ">
-            <h1 className=" m-12 text-white text-3xl ">
+            <h1 className="font-EBGaramond m-12 text-black text-3xl ">
               {thumbnailTitle}
             </h1>
         </div> 
-      <div className="h-[50%] w-[100%] flex flex-col">
-          <h1 className=" m-12 text-white text-3xl ">
+      <div className="h-[50%] w-[100%] flex flex-col justify-between">
+          <h1 className="font-EBGaramond m-12 text-black text-3xl ">
               {/* What we Did */}
               {title}
           </h1>
-          <div className="text-white p-8 " >
+          <div className="text-black p-8 font-ro md:text-[120%] " >
             {/*  */}
               {description}
           </div>

@@ -3,7 +3,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useRef } from "react";
+import {useRef} from "react";
+import { useWindowWidth } from "@/utils/useWindowWidth";
+
 
 gsap.registerPlugin(ScrollTrigger)
 interface props{
@@ -14,7 +16,9 @@ interface props{
   colour?:string,
 };
 function StickyCards({index , scrollProgress , title , description , colour}:props) {
-  const topVal = (index - scrollProgress) * 7;
+  const windowWidth = useWindowWidth();
+  const sizeConst = (windowWidth>=1024)?1:(1024/windowWidth);
+  const topVal = (index - scrollProgress*sizeConst) * 7;
   const cardRef = useRef<HTMLDivElement>(null);
   const desRef = useRef<HTMLDivElement>(null);
   useGSAP(()=>{
@@ -47,23 +51,23 @@ function StickyCards({index , scrollProgress , title , description , colour}:pro
     
     <div 
     
-    className={`sticky flex justify-center h-screen ${colour||'bg-black'} border-t-2 border-gray-400 border-dashed`} 
+    className={`sticky flex justify-center h-screen ${colour||'bg-black'} border-t-2 border-gray-400 border-dashed overflow-visible`} 
     style={{top:`${topVal}rem`}}>
       <div 
       ref={cardRef}
       className="pt-4 text-white ">
        <div>
         <div className="m-4"> {index}</div>
-        <h1 className="  text-5xl font-bebas  mx-[20%] mt-8">
+        <h1 className=" text-3xl  md:text-5xl font-Montserrat font-normal mx-[20%] mt-6">
           {title} 
         </h1>
-        <div ref={desRef} className="mx-[20%] mt-[10%]">
-          <p className=" text text-justify">
+        <div ref={desRef} className="mx-[10%] sm:mx-[20%] mt-[5%]">
+          <p className="text-sm sm:text-[1.2rem] font-IBMPlexSerif text text-justify ">
           {description}
         </p>
         <div className=" flex justify-end ">
           <button 
-          className=" px-16 py-2 border-2  hover:border-xdas-purple-600 hover:bg-xdas-purple-600 hover:drop-shadow-sm hover:drop-shadow-xdas-purple-700 duration-100 ease-[cubic-bezier(0.76,0,0.24,1)]"> 
+          className=" m-4 px-16 py-2 border-2  hover:border-xdas-purple-600 hover:bg-xdas-purple-600 hover:drop-shadow-sm hover:drop-shadow-xdas-purple-700 duration-100 ease-[cubic-bezier(0.76,0,0.24,1)]"> 
           Explore
           </button>
         </div>

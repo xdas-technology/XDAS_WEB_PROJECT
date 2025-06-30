@@ -2,7 +2,7 @@ import React from 'react'
 
 const SocilasAndLinks = () => {
   return (
-    <div className="bg-black h-screen w-min-screen text-white flex flex-col justify-between p-10 font-sans">
+    <div className="bg-black h-screen w-min-screen text-white flex flex-col justify-between p-10 font-sans ">
         <div className=' h-[80%] flex flex-col justify-between'>
             <div className='md:m-16 '>
             <h1 className=' text-6xl font-bold font-sans'> Let There Be Change</h1>
