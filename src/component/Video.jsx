@@ -39,8 +39,8 @@ const Video = () => {
                 />
                 Your browser does not support the video tag.
                 </video>
-                <div className=" flex flex-col justify-center mr-50">
-                    <p className="text-white w-screen md:w-auto md:text-left text-center m-4 ">
+                <div className=" flex flex-col justify-center mr-50 ">
+                    <p className="text-white w-[100%] md:w-auto md:text-left text-center m-4 ">
                         A short video about our company
                     </p>
                 </div>

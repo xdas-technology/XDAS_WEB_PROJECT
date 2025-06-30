@@ -175,7 +175,7 @@ function Experience() {
           background: 'transparent',
           position: 'absolute',
           margin: 'auto',
-          width: '100vw',
+          width: '100%',
           height: '200vh',
           zIndex: 10,
           pointerEvents: 'none',
@@ -192,13 +192,13 @@ function Experience() {
       </Canvas>
       <div
         ref={heroRef}
-        className="h-[200vh] w-screen bg-black text-white text-center"
+        className="h-[200vh] w-[100%] bg-black text-white text-center"
       >
         <div
           className="w-full h-[100vh] flex flex-col md:flex-row justify-center items-center p-4 md:p-8 lg:p-16 gap-8"
         >
           <h1
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-[20vh] overflow-hidden leading-none"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[25vh] overflow-hidden leading-none"
             ref={xdasRef}
             data-original-text="XDAS"
           >

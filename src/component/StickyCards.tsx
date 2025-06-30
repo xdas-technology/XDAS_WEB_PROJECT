@@ -51,7 +51,7 @@ function StickyCards({index , scrollProgress , title , description , colour}:pro
     style={{top:`${topVal}rem`}}>
       <div 
       ref={cardRef}
-      className="pt-4 text-white size-svw">
+      className="pt-4 text-white ">
        <div>
         <div className="m-4"> {index}</div>
         <h1 className="  text-5xl font-bebas  mx-[20%] mt-8">

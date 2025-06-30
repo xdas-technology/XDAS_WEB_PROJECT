@@ -6,9 +6,12 @@ import { useRef } from "react";
 interface props {
   end?:boolean,
   img:string,
+  thumbnailTitle:string,
+  title:string,
+  description:string,
 };
 
-const ProductCard = ({end,img}:props) => {
+const ProductCard = ({end,img,thumbnailTitle, title , description}:props) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const onHover = () => {
@@ -46,18 +49,17 @@ const ProductCard = ({end,img}:props) => {
       <div ref={contentRef} className="h-[200%] w-full " onMouseEnter={onHover} onMouseLeave={onHoverLeave} onTouchMove ={onHover} onTouchEnd={onHoverLeave}>
       <div className="h-[50%] w-[100%] flex flex-col justify-end ">
             <h1 className=" m-12 text-white text-3xl ">
-              Microsoft
+              {thumbnailTitle}
             </h1>
         </div> 
       <div className="h-[50%] w-[100%] flex flex-col">
           <h1 className=" m-12 text-white text-3xl ">
-              What we Did
+              {/* What we Did */}
+              {title}
           </h1>
           <div className="text-white p-8 " >
-            We're proud to have partnered with Microsoft, providing them with a range of our services.
-              Our collaboration has focused on delivering software development, cloud infrastructure management, data analytics, and AI/ML support. 
-              We've also offered consulting and technical support to ensure their continued success. 
-              This ongoing partnership highlights our commitment to delivering high-quality, impactful technology solutions.
+            {/*  */}
+              {description}
           </div>
         </div> 
       </div>
