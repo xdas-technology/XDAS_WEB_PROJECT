@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
-@theme {
-  --color-xdas-purple-100: #E0AAFF; /* Custom CSS Variable for the color */
+
+
+
+
+
+@theme inline {
+  --font-bebas: 'Bebas Neue', 'sans-serif';
+  --color-xdas-purple-100: #E0AAFF; 
   --color-xdas-purple-200: #C77DFF;
   --color-xdas-purple-300: #9D4EDD;
   --color-xdas-purple-400: #7B2CBF;
@@ -9,4 +15,10 @@
   --color-xdas-purple-600: #3C096C;
   --color-xdas-purple-700: #240046;
   --color-xdas-purple-800: #10002B;
+}
+::selection {
+  @apply text-white bg-xdas-purple-400; 
+
+::-moz-selection {
+  @apply text-white bg-xdas-purple-400; 
 }
