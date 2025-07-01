@@ -195,7 +195,7 @@ function Experience() {
       </Canvas>
       <div
         ref={heroRef}
-        className="h-[200vh] w-[100%] bg-gradient-to-b from-black to-xdas-purple-800 text-white text-center bg-center bg-no-repeat bg-fixed"
+        className="h-[200vh] w-[100%] bg-gradient-to-b from-black to-xdas-purple-600 text-white text-center bg-center bg-no-repeat bg-fixed"
         style={{backgroundImage:"url(/background/space_background.gif)" }}
       >
         <div
@@ -212,7 +212,7 @@ function Experience() {
             ref={prologueTextRef}
             className="w-full font-EBGaramond  max-w-md md:w-1/2 lg:w-[20vw] text-base md:text-xl lg:text-2xl text-justify "
           >
-            What's past is prologue; what to come, in yours and my discharge, lies rich in hope.
+            Engineered for Excellence . Trusted for Reliability
           </div>
         </div>
       </div>
