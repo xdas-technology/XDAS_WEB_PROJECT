@@ -40,14 +40,14 @@ const StackCard = () => {
   "bg-xdas-purple-500",
   "bg-xdas-purple-600",
   "bg-xdas-purple-700",
-  "bg-xdas-purple-800"
+  "bg-xdas-purple-800",
+  "bg-black"
 ];
-  let i =2;
   return (
     <div ref = {sectionRef} className="relative top-0">
-        <StickyCards index={0} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[7]}/>
-        <StickyCards index={1} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[6]}/>
-        <StickyCards index={2} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[5]}/>
+        <StickyCards index={0} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[8]}/>
+        <StickyCards index={1} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[7]}/>
+        <StickyCards index={2} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[6]}/>
         <StickyCards index={3} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[5]}/>
         <StickyCards index={4} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[6]}/>
         <StickyCards index={5} title="Webdev" description={demo} scrollProgress={scrollProgress} colour={colourNames[7]}/>

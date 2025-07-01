@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 const data = [
   {
     end: false,
-    img: "../../services/pattern.png",
+    img: "/background/blurry-black-purple.svg",
     thumbnailTitle: "Company",
     title: "What we Did",
     description: `We're proud to have partnered with Microsoft, providing them with a range of our services.
@@ -13,7 +13,7 @@ const data = [
   },
   {
     end: true,
-    img: "../../services/digital-marketing.webp",
+    img: "/background/blurry-800-700.svg",
     thumbnailTitle: "Company",
     title: "What we Did",
     description: `We're proud to have partnered with Microsoft, providing them with a range of our services.
@@ -23,7 +23,7 @@ const data = [
   },
   {
     end: false,
-    img: "../../services/mobile-app-development.webp",
+    img: "/background/blurry-gradient-haikei.svg",
     thumbnailTitle: "Company",
     title: "What we Did",
     description: `We're proud to have partnered with Microsoft, providing them with a range of our services.
@@ -33,7 +33,7 @@ const data = [
   },
   {
     end: true,
-    img: "../../services/web-app-development.webp",
+    img: "/background/blurry-800-600.svg",
     thumbnailTitle: "Company",
     title: "What we Did",
     description: `We're proud to have partnered with Microsoft, providing them with a range of our services.
@@ -43,7 +43,7 @@ const data = [
   },
   {
     end: false,
-    img: "../../services/website-development.webp",
+    img: "/background/blurry-800-500.svg",
     thumbnailTitle: "Company",
     title: "What we Did",
     description: `We're proud to have partnered with Microsoft, providing them with a range of our services.

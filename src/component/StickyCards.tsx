@@ -5,7 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import {useRef} from "react";
 import { useWindowWidth } from "@/utils/useWindowWidth";
-
+import Image from "next/image";
+import ".//../app/index.css"
 
 gsap.registerPlugin(ScrollTrigger)
 interface props{
@@ -21,16 +22,23 @@ function StickyCards({index , scrollProgress , title , description , colour}:pro
   const topVal = (index - scrollProgress*sizeConst) * 7;
   const cardRef = useRef<HTMLDivElement>(null);
   const desRef = useRef<HTMLDivElement>(null);
+  const gifRef = useRef<HTMLDivElement>(null);
   useGSAP(()=>{
     if(!desRef || ! desRef.current) return;
-    const anim = gsap.from(desRef.current,{
-      y: 2*window.innerHeight/3,
+    const tl = gsap.timeline();
+    tl.from(desRef.current,{
+      y:"66vh",
+      ease:'sine.inOut',
+      opacity:0
+    });
+    tl.from(gifRef.current,{
+      y:"66vh",
       ease:'sine.inOut',
       opacity:0
     });
     ScrollTrigger.create({
       trigger:cardRef.current,
-      animation:anim,
+      animation:tl,
       start: 'top bottom',
       end: 'top 20%  ',
       scrub:true,
@@ -51,17 +59,19 @@ function StickyCards({index , scrollProgress , title , description , colour}:pro
     
     <div 
     
-    className={`sticky flex justify-center h-screen ${colour||'bg-black'} border-t-2 border-gray-400 border-dashed overflow-visible`} 
-    style={{top:`${topVal}rem`}}>
+    className={`sticky flex justify-center h-screen ${colour||'bg-black'}  overflow-visible`} 
+    style={{top:`${topVal}rem`}} >
       <div 
       ref={cardRef}
       className="pt-4 text-white ">
-       <div>
+       <div 
+       className=" flex justify-around">
+        <div>
         <div className="m-4"> {index}</div>
-        <h1 className=" text-3xl  md:text-5xl font-Montserrat font-normal mx-[20%] mt-6">
+        <h1 className=" text-3xl  md:text-5xl font-Lora font-normal mx-[20%] mt-6">
           {title} 
         </h1>
-        <div ref={desRef} className="mx-[10%] sm:mx-[20%] mt-[5%]">
+        <div ref={desRef} className="mx-[10%] sm:mx-[20%] lg:mr-[0%] mt-[5%]">
           <p className="text-sm sm:text-[1.2rem] font-IBMPlexSerif text text-justify ">
           {description}
         </p>
@@ -71,6 +81,11 @@ function StickyCards({index , scrollProgress , title , description , colour}:pro
           Explore
           </button>
         </div>
+        </div>
+        
+        </div>
+        <div ref={gifRef} className="flex justify-center collapse mt-8 lg:w-400 lg:h-100 lg:visible"> 
+          <Image className="m-4" src="/output-onlinegiftools(1).gif" alt="XDAS" height={400} width={400}/>
         </div>
        </div>
         

@@ -8,7 +8,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from 'gsap/SplitText';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Euler } from 'three';
-import { useWindowWidth } from '@/utils/useWindowWidth';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 interface GltfModelProps {
@@ -170,7 +169,9 @@ function Experience() {
   }, []);
 
   return (
+
     <>
+      
       <Canvas
         ref={canvasRef}
         style={{
@@ -194,7 +195,8 @@ function Experience() {
       </Canvas>
       <div
         ref={heroRef}
-        className="h-[200vh] w-[100%] bg-gradient-to-b from-black to-xdas-purple-800 text-white text-center"
+        className="h-[200vh] w-[100%] bg-gradient-to-b from-black to-xdas-purple-800 text-white text-center bg-center bg-no-repeat bg-fixed"
+        style={{backgroundImage:"url(/background/space_background.gif)" }}
       >
         <div
           className="w-full h-[100vh] flex flex-col md:flex-row justify-center items-center p-4 md:p-8 lg:p-16 gap-8"
@@ -208,7 +210,7 @@ function Experience() {
           </h1>
           <div
             ref={prologueTextRef}
-            className="w-full font-EBGaramond  max-w-md md:w-1/2 lg:w-[20vw] text-base md:text-xl lg:text-2xl text-justify"
+            className="w-full font-EBGaramond  max-w-md md:w-1/2 lg:w-[20vw] text-base md:text-xl lg:text-2xl text-justify "
           >
             What's past is prologue; what to come, in yours and my discharge, lies rich in hope.
           </div>
