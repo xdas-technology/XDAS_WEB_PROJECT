@@ -19,7 +19,7 @@ const SocilasAndLinks = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
-            Let There Be Change
+            By Our Hand, the World is Reforged
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Innovation isn't just what we do—it's who we are. At XDAS Technology, 
@@ -211,7 +211,7 @@ const SocilasAndLinks = () => {
               Get exclusive insights, industry updates, and early access to our latest innovations. 
               Be part of the community that's shaping the future of technology.
             </p>
-            <form onSubmit={handleSubscribe} className="max-w-md mx-auto flex gap-4">
+              <form onSubmit={handleSubscribe} className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
                 value={email}

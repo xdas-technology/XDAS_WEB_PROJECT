@@ -43,7 +43,7 @@ function ModelAndSceneLogic( {scrollProgress}:ModelAndSceneLogicProps ) {
   const modelScale = [dynamicScale, dynamicScale, dynamicScale];
   const modelPosition = viewport.width < 768 ? [0, 50, 0] : [0, 70, 0];
 
-  const modelUrl = "/result.gltf";
+  const modelUrl = "/resource/result.gltf";
 
   return (
     <>

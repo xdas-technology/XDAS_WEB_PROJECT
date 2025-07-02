@@ -285,24 +285,30 @@ export default function Community() {
                             <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
                                 Get the latest community updates, event announcements, and exclusive content delivered to your inbox.
                             </p>
-                            <form onSubmit={handleSubscribe} className="max-w-md mx-auto flex gap-4">
+                            <form
+                                onSubmit={handleSubscribe}
+                                className="max-w-md mx-auto flex flex-col sm:flex-row gap-4"
+                            >
                                 <input
-                                    type="email"
-                                    value={emailSubscription}
-                                    onChange={(e) => setEmailSubscription(e.target.value)}
-                                    placeholder="Enter your email address"
-                                    className="flex-1 px-4 py-3 rounded-lg border border-purple-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-900"
-                                    required
+                                type="email"
+                                value={emailSubscription}
+                                onChange={(e) => setEmailSubscription(e.target.value)}
+                                placeholder="Enter your email address"
+                                className="flex-1 px-4 py-3 rounded-lg border border-purple-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-900"
+                                required
                                 />
                                 <button
-                                    type="submit"
-                                    className="bg-white text-purple-700 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                                type="submit"
+                                className="bg-white text-purple-700 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
                                 >
-                                    Subscribe
+                                Subscribe
                                 </button>
                             </form>
-                            <p className="text-purple-200 text-sm mt-4">Join 8,000+ developers already subscribed</p>
+                            <p className="text-purple-200 text-sm mt-4">
+                                Join 8,000+ developers already subscribed
+                            </p>
                         </div>
+
                     </div>
                 </section>
 

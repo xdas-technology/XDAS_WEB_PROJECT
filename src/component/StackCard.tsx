@@ -30,7 +30,7 @@ const serviceCards = [
 ];
 
 const StackCard = () => {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Dark purple gradient backgrounds with increasing intensity
