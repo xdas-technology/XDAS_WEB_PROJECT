@@ -1,6 +1,7 @@
 'use client';
 import { useRef, useEffect, useState } from 'react';
 import StickyCards from './StickyCards';
+import Link from 'next/link';
 
 const serviceCards = [
   {
@@ -155,12 +156,16 @@ const StackCard = () => {
                 From concept to deployment, we're here to make your vision a reality.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                <button className="w-full sm:w-auto bg-gradient-to-r from-white to-purple-50 text-purple-700 px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:from-purple-50 hover:to-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
-                  Start Your Project
-                </button>
-                <button className="w-full sm:w-auto border-2 border-white text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:bg-white hover:text-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
-                  View Our Work
-                </button>
+                <Link href="/pricing">
+                  <button className="w-full sm:w-auto bg-gradient-to-r from-white to-purple-50 text-purple-700 px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:from-purple-50 hover:to-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
+                    Start Your Project
+                  </button>
+                </Link>
+                <Link href="/about-us">
+                  <button className="w-full sm:w-auto border-2 border-white text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:bg-white hover:text-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
+                    View Our Work
+                  </button>
+                </Link>
               </div>
               
               {/* Additional features showcase */}
