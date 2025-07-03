@@ -62,9 +62,9 @@ function ModelAndSceneLogic( {scrollProgress}:ModelAndSceneLogicProps ) {
 }
 
 function Experience() {
-  const canvasRef = useRef(null);
-  const heroRef = useRef(null);
-  const xdasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const xdasRef = useRef<HTMLDivElement>(null);
   const prologueTextRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -118,6 +118,7 @@ function Experience() {
     }, 0);
 
     const textTl = gsap.timeline();
+    
     const splitText = new SplitText(xdasRef.current, { type: 'chars' });
     const chars = splitText.chars;
 

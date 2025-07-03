@@ -4,7 +4,7 @@ import Link from 'next/link';
 const SocilasAndLinks = () => {
   const [email, setEmail] = useState('');
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email) {
       alert('Thank you for subscribing to XDAS Technology updates!');
@@ -22,7 +22,7 @@ const SocilasAndLinks = () => {
             By Our Hand, the World is Reforged
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Innovation isn't just what we do—it's who we are. At XDAS Technology, 
+            Innovation isn&apos;t just what we do—it&apos;s who we are. At XDAS Technology, 
             we transform visions into reality, one breakthrough at a time.
           </p>
         </div>
@@ -209,7 +209,7 @@ const SocilasAndLinks = () => {
             <h3 className="text-3xl font-bold mb-4 text-white">Join the Innovation Revolution</h3>
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
               Get exclusive insights, industry updates, and early access to our latest innovations. 
-              Be part of the community that's shaping the future of technology.
+              Be part of the community that&apos;s shaping the future of technology.
             </p>
               <form onSubmit={handleSubscribe} className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
               <input

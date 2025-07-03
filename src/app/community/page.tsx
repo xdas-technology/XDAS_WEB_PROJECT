@@ -3,6 +3,17 @@ import { useState } from 'react';
 import Header from '@/component/Header';
 import PageHero from '@/component/common/PageHero';
 
+
+
+type CommunityChannel = {
+    name: string;
+    description: string;
+    icon: string;
+    link: string;
+    members?: string; // optional
+};
+
+
 export default function Community() {
     const [selectedTab, setSelectedTab] = useState('events');
     const [emailSubscription, setEmailSubscription] = useState('');
@@ -72,7 +83,7 @@ export default function Community() {
         }
     ];
 
-    const communityChannels = [
+    const communityChannels:CommunityChannel[] = [
         {
             name: "Discord Server",
             description: "Join our active Discord community for real-time discussions and support.",
@@ -99,7 +110,7 @@ export default function Community() {
         }
     ];
 
-    const handleSubscribe = (e) => {
+    const handleSubscribe = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (emailSubscription) {
             alert('Thank you for subscribing to XDAS Community updates!');

@@ -4,7 +4,7 @@ import Header from '@/component/Header';
 import PageHero from '@/component/common/PageHero';
 
 export default function Help() {
-    const [selectedCategory, setSelectedCategory] = useState('general');
+    const [selectedCategory, setSelectedCategory] = useState<FAQCategory>('general');
     const [searchQuery, setSearchQuery] = useState('');
 
     const faqCategories = {
@@ -97,6 +97,7 @@ export default function Help() {
             ]
         }
     };
+    
 
     const contactMethods = [
         {
@@ -132,7 +133,8 @@ export default function Help() {
             info: "Free 30-min consultation"
         }
     ];
-
+    type FAQCategory = keyof typeof faqCategories;
+    
     const filteredFAQs = faqCategories[selectedCategory].faqs.filter(faq =>
         faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
         faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
@@ -233,7 +235,7 @@ export default function Help() {
                         {Object.entries(faqCategories).map(([key, category]) => (
                             <button
                                 key={key}
-                                onClick={() => setSelectedCategory(key)}
+                                onClick={() => setSelectedCategory(key as FAQCategory)}
                                 className={`flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                                     selectedCategory === key 
                                         ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg' 
@@ -309,7 +311,7 @@ export default function Help() {
                         <div className="relative z-10">
                             <h2 className="text-4xl font-bold mb-4 text-white">Still Need Help?</h2>
                             <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
-                                Can't find what you're looking for? Our expert support team is ready to assist you personally.
+                                Can&apos;t find what you&apos;re looking for? Our expert support team is ready to assist you personally.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <button

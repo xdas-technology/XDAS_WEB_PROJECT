@@ -152,8 +152,8 @@ const StackCard = () => {
               </h3>
               <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-300 to-white mx-auto mb-6 sm:mb-8 rounded-full"></div>
               <p className="text-lg sm:text-xl lg:text-2xl text-purple-100 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
-                Let's discuss how our expertise can drive innovation and growth for your organization. 
-                From concept to deployment, we're here to make your vision a reality.
+                Let&apos;s discuss how our expertise can drive innovation and growth for your organization. 
+                From concept to deployment, we&apos;re here to make your vision a reality.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
                 <Link href="/pricing">
