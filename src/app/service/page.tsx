@@ -225,7 +225,7 @@ export default function Service() {
                         <div className="relative z-10">
                             <h2 className="text-4xl font-bold mb-4 text-white">Ready to Transform Your Business?</h2>
                             <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
-                                Let's discuss your project requirements and create a solution that drives your business forward.
+                                Let&apos;s discuss your project requirements and create a solution that drives your business forward.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <button className="bg-white text-purple-700 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">

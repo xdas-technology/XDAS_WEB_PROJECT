@@ -4,7 +4,7 @@ import Link from 'next/link';
 const SocilasAndLinks = () => {
   const [email, setEmail] = useState('');
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email) {
       alert('Thank you for subscribing to XDAS Technology updates!');
@@ -19,10 +19,10 @@ const SocilasAndLinks = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
-            Let There Be Change
+            By Our Hand, the World is Reforged
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Innovation isn't just what we do—it's who we are. At XDAS Technology, 
+            Innovation isn&apos;t just what we do—it&apos;s who we are. At XDAS Technology, 
             we transform visions into reality, one breakthrough at a time.
           </p>
         </div>
@@ -80,24 +80,24 @@ const SocilasAndLinks = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-purple-400">Company</h3>
             <div className="space-y-3">
-              <Link href="/about" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/about-us" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 About Us
               </Link>
-              <Link href="/careers" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/community" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Careers
               </Link>
               <Link href="/community" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Community
               </Link>
-              <Link href="/contact" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/help" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Contact Us
               </Link>
-              <Link href="/locations" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              {/* <Link href="/locations" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Locations
               </Link>
               <Link href="/sitemap" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Sitemap
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -105,19 +105,19 @@ const SocilasAndLinks = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-purple-400">Services</h3>
             <div className="space-y-3">
-              <Link href="/services/web-development" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/pricing" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Web Development
               </Link>
-              <Link href="/services/mobile-apps" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/pricing" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Mobile Apps
               </Link>
-              <Link href="/services/ai-solutions" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/pricing" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 AI Solutions
               </Link>
-              <Link href="/services/cloud-services" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/pricing" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Cloud Services
               </Link>
-              <Link href="/services/blockchain" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/pricing" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Blockchain
               </Link>
               <Link href="/pricing" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
@@ -133,10 +133,10 @@ const SocilasAndLinks = () => {
               <Link href="/help" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Help Center
               </Link>
-              <Link href="/documentation" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              <Link href="/about-us" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Documentation
               </Link>
-              <Link href="/api-reference" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
+              {/* <Link href="/api-reference" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 API Reference
               </Link>
               <Link href="/tutorials" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
@@ -144,7 +144,7 @@ const SocilasAndLinks = () => {
               </Link>
               <Link href="/status" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 System Status
-              </Link>
+              </Link> */}
               <a href="mailto:xdas.tech@gmail.com" className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-2">
                 Email Support
               </a>
@@ -173,7 +173,7 @@ const SocilasAndLinks = () => {
                 <span className="mr-3">🐱</span>
                 GitHub
               </a>
-              <a 
+              {/* <a 
                 href="https://discord.gg/xdas-tech" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -190,7 +190,7 @@ const SocilasAndLinks = () => {
               >
                 <span className="mr-3">📺</span>
                 YouTube
-              </a>
+              </a> */}
               <a 
                 href="tel:+916388037374"
                 className="flex items-center text-gray-300 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
@@ -209,9 +209,9 @@ const SocilasAndLinks = () => {
             <h3 className="text-3xl font-bold mb-4 text-white">Join the Innovation Revolution</h3>
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
               Get exclusive insights, industry updates, and early access to our latest innovations. 
-              Be part of the community that's shaping the future of technology.
+              Be part of the community that&apos;s shaping the future of technology.
             </p>
-            <form onSubmit={handleSubscribe} className="max-w-md mx-auto flex gap-4">
+              <form onSubmit={handleSubscribe} className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
                 value={email}
