@@ -60,9 +60,9 @@ const ScrollProductCard = () => {
       <div className="sticky top-0 flex h-screen items-center justify-center bg-gradient-to-b from-xdas-purple-800 to-black p-4 lg:p-8">
         <h1 className="w-full text-center font-serif text-2xl text-white sm:text-3xl md:text-4xl lg:w-[60%] lg:text-left xl:w-[40%]">
         Where innovation meets excellence, XDAS Technology stands as the beacon of digital transformation. 
-          We craft tomorrow's solutions with today's vision, turning complex challenges into elegant code. 
+          We craft tomorrow&apos;s solutions with today&apos;s vision, turning complex challenges into elegant code. 
           From healthcare to fintech, from startups to enterprises, we bridge the gap between imagination and reality. 
-          With every line of code, we don't just build software—we architect the future, one breakthrough at a time.
+          With every line of code, we don&apos;t just build software—we architect the future, one breakthrough at a time.
         </h1>
       </div>
       <div className="relative z-20 pb-[100vh]">

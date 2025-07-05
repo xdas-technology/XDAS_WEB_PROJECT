@@ -1,7 +1,6 @@
 "use client"
 import gsap from "gsap";
 import { useRef, useState } from "react";
-import Image from "next/image";
 
 interface props {
   end?:boolean,

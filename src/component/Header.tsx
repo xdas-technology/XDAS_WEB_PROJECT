@@ -40,13 +40,15 @@ const Header = () => {
   return (
     <div ref={headerRef} className="sticky h-[4rem] top-0 z-30 w-full">
       <div className="h-full bg-black text-gray-300 flex items-center justify-between px-4">
-        <Image
-          className="m-4"
-          src="/favicon/web-app-manifest-512x512-removebg-preview.png"
-          alt="XDAS"
-          height={25}
-          width={50}
-        />
+        <Link href="/">
+          <Image
+            className="m-4 cursor-pointer"
+            src="/favicon/XDASLogo.png"
+            alt="XDAS"
+            height={35}
+            width={70}
+          />
+      </Link>
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
@@ -146,45 +148,7 @@ const Header = () => {
         </div>
       )}
 
-      {isMenuOpen && (
-        <div className="md:hidden bg-black text-gray-300 flex flex-col items-center py-4 space-y-4">
-          <a
-            href="#"
-            className="hover:text-white transition-colors duration-200"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Service
-          </a>
-          <a
-            href="#"
-            className="hover:text-white transition-colors duration-200"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About Us
-          </a>
-          <a
-            href="#"
-            className="hover:text-white transition-colors duration-200"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Help
-          </a>
-          <a
-            href="#"
-            className="hover:text-white transition-colors duration-200"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Pricing
-          </a>
-          <a
-            href="#"
-            className="hover:text-white transition-colors duration-200"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Community
-          </a>
-        </div>
-      )}
+      
     </div>
   );
 };

@@ -25,7 +25,7 @@ export default function AboutUs() {
                             </p>
                             <p className="text-lg text-gray-300">
                                 Our team of experts combines deep technical knowledge with industry experience to deliver 
-                                solutions that not only meet today's challenges but anticipate tomorrow's opportunities.
+                                solutions that not only meet today&apos;s challenges but anticipate tomorrow&apos;s opportunities.
                             </p>
                         </div>
                         <div className="relative h-96 rounded-lg overflow-hidden group">

@@ -3,29 +3,44 @@ import { useState } from 'react';
 import Header from '@/component/Header';
 import PageHero from '@/component/common/PageHero';
 
+
+type CategoryKey = 'web' | 'mobile' | 'ai' | 'cloud' | 'blockchain' | 'ecommerce';
+
+type Complexity = 'simple' | 'medium' | 'complex' | 'enterprise';
+type Timeline = 'rush' | 'normal' | 'flexible' ;
+type TeamSize = 'small' | 'medium' | 'large'
+type Platform = 'iOS' | 'Android' | 'Web' | 'Desktop';
+type Feature = | 'Advanced Analytics' | 'Real-time Chat' | 'Payment Integration' | 'Push Notifications' | 'Social Media Integration' | 'Multi-language Support' | 'Advanced Security' | 'API Integration' | 'Third-party Integrations' | 'Custom Admin Panel' | 'Advanced Search' | 'AI/ML Features';
+
+
 export default function Pricing() {
-    const [selectedCategory, setSelectedCategory] = useState('web');
+    const [selectedCategory, setSelectedCategory] = useState<CategoryKey>('web');
     const [projectType, setProjectType] = useState('');
     const [complexity, setComplexity] = useState('');
-    const [features, setFeatures] = useState([]);
-    const [timeline, setTimeline] = useState('');
-    const [teamSize, setTeamSize] = useState('');
-    const [platforms, setPlatforms] = useState([]);
-    const [estimatedPrice, setEstimatedPrice] = useState(null);
-    const [selectedCurrency, setSelectedCurrency] = useState('USD');
+    const [features, setFeatures] = useState<Feature[]>([]);
+    const [timeline, setTimeline] = useState<Timeline>('rush');
+    const [teamSize, setTeamSize] = useState<TeamSize>('small');
+    const [platforms, setPlatforms] = useState<Platform[]>([]);
+    const [estimatedPrice, setEstimatedPrice] = useState<number|null>(null);
+    const [selectedCurrency, setSelectedCurrency] = useState<CurrencyCode>('USD');
 
-    const currencies = {
-        USD: { symbol: '$', rate: 1, name: 'US Dollar' },
-        INR: { symbol: '₹', rate: 83, name: 'Indian Rupee' },
-        EUR: { symbol: '€', rate: 0.92, name: 'Euro' },
-        GBP: { symbol: '£', rate: 0.79, name: 'British Pound' },
-        CAD: { symbol: 'C$', rate: 1.36, name: 'Canadian Dollar' },
-        AUD: { symbol: 'A$', rate: 1.52, name: 'Australian Dollar' },
-        JPY: { symbol: '¥', rate: 150, name: 'Japanese Yen' },
-        CHF: { symbol: 'CHF', rate: 0.88, name: 'Swiss Franc' },
-        SGD: { symbol: 'S$', rate: 1.34, name: 'Singapore Dollar' },
-        AED: { symbol: 'د.إ', rate: 3.67, name: 'UAE Dirham' }
+    const currencies: Record<
+    'USD' | 'INR' | 'EUR' | 'GBP' | 'CAD' | 'AUD' | 'JPY' | 'CHF' | 'SGD' | 'AED',
+    { symbol: string; rate: number; name: string }
+    > = {
+    USD: { symbol: '$', rate: 1, name: 'US Dollar' },
+    INR: { symbol: '₹', rate: 83, name: 'Indian Rupee' },
+    EUR: { symbol: '€', rate: 0.92, name: 'Euro' },
+    GBP: { symbol: '£', rate: 0.79, name: 'British Pound' },
+    CAD: { symbol: 'C$', rate: 1.36, name: 'Canadian Dollar' },
+    AUD: { symbol: 'A$', rate: 1.52, name: 'Australian Dollar' },
+    JPY: { symbol: '¥', rate: 150, name: 'Japanese Yen' },
+    CHF: { symbol: 'CHF', rate: 0.88, name: 'Swiss Franc' },
+    SGD: { symbol: 'S$', rate: 1.34, name: 'Singapore Dollar' },
+    AED: { symbol: 'د.إ', rate: 3.67, name: 'UAE Dirham' }
     };
+    type CurrencyCode = keyof typeof currencies;
+
 
     const pricingCategories = {
         web: {
@@ -238,23 +253,23 @@ export default function Pricing() {
         let multiplier = 1;
 
         // Base price calculation
-        const complexityMultipliers = {
-            'simple': 1,
-            'medium': 1.5,
-            'complex': 2.5,
-            'enterprise': 4
+        const complexityMultipliers: Record<Complexity, number> = {
+            simple: 1,
+            medium: 1.5,
+            complex: 2.5,
+            enterprise: 4
         };
 
-        const timelineMultipliers = {
-            'rush': 1.5,
-            'normal': 1,
-            'flexible': 0.8
+        const timelineMultipliers: Record<Timeline, number> = {
+            rush: 1.5,
+            normal: 1,
+            flexible: 0.8
         };
 
-        const teamSizeMultipliers = {
-            'small': 1,
-            'medium': 1.3,
-            'large': 1.8
+        const teamSizeMultipliers: Record<TeamSize, number> = {
+            small: 1,
+            medium: 1.3,
+            large: 1.8
         };
 
         // Get base price from project type
@@ -266,9 +281,9 @@ export default function Pricing() {
         }
 
         // Apply multipliers
-        multiplier *= complexityMultipliers[complexity] || 1;
-        multiplier *= timelineMultipliers[timeline] || 1;
-        multiplier *= teamSizeMultipliers[teamSize] || 1;
+        multiplier *= complexityMultipliers[complexity as Complexity] ?? 1;
+        multiplier *= timelineMultipliers[timeline as Timeline] ?? 1;
+        multiplier *= teamSizeMultipliers[teamSize as TeamSize] ?? 1;
 
         // Feature-based adjustments
         const featureBonus = features.length * 0.1; // 10% per additional feature
@@ -283,12 +298,12 @@ export default function Pricing() {
         setEstimatedPrice(finalPrice);
     };
 
-    const formatPrice = (price) => {
+    const formatPrice = (price: number) => {
         const convertedPrice = Math.round(price * currencies[selectedCurrency].rate);
         return `${currencies[selectedCurrency].symbol}${convertedPrice.toLocaleString()}`;
     };
 
-    const formatPriceRange = (min, max) => {
+    const formatPriceRange = (min:number, max:number) => {
         const convertedMin = Math.round(min * currencies[selectedCurrency].rate);
         const convertedMax = Math.round(max * currencies[selectedCurrency].rate);
         return `${currencies[selectedCurrency].symbol}${convertedMin.toLocaleString()} - ${currencies[selectedCurrency].symbol}${convertedMax.toLocaleString()}`;
@@ -312,7 +327,7 @@ export default function Pricing() {
                         {Object.entries(currencies).map(([code, currency]) => (
                             <button
                                 key={code}
-                                onClick={() => setSelectedCurrency(code)}
+                                onClick={() => setSelectedCurrency(code as CurrencyCode)}
                                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                                     selectedCurrency === code 
                                         ? 'bg-purple-600 text-white' 
@@ -336,7 +351,7 @@ export default function Pricing() {
                         {Object.entries(pricingCategories).map(([key, category]) => (
                             <button
                                 key={key}
-                                onClick={() => setSelectedCategory(key)}
+                                onClick={() => setSelectedCategory(key as CategoryKey)}
                                 className={`flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                                     selectedCategory === key 
                                         ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg' 
@@ -399,7 +414,7 @@ export default function Pricing() {
                                         <select 
                                             value={selectedCategory}
                                             onChange={(e) => {
-                                                setSelectedCategory(e.target.value);
+                                                setSelectedCategory(e.target.value as CategoryKey );
                                                 setProjectType('');
                                             }}
                                             className="w-full p-4 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-purple-500 focus:outline-none"
@@ -446,7 +461,7 @@ export default function Pricing() {
                                         <label className="block text-white font-semibold mb-3">Timeline *</label>
                                         <select 
                                             value={timeline}
-                                            onChange={(e) => setTimeline(e.target.value)}
+                                            onChange={(e) => setTimeline(e.target.value as Timeline)}
                                             className="w-full p-4 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-purple-500 focus:outline-none"
                                         >
                                             <option value="">Select timeline...</option>
@@ -463,7 +478,7 @@ export default function Pricing() {
                                         <label className="block text-white font-semibold mb-3">Team Size Preference</label>
                                         <select 
                                             value={teamSize}
-                                            onChange={(e) => setTeamSize(e.target.value)}
+                                            onChange={(e) => setTeamSize(e.target.value as TeamSize)}
                                             className="w-full p-4 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-purple-500 focus:outline-none"
                                         >
                                             <option value="">Select team size...</option>
@@ -482,10 +497,10 @@ export default function Pricing() {
                                                     <label key={platform} className="flex items-center text-gray-300">
                                                         <input
                                                             type="checkbox"
-                                                            checked={platforms.includes(platform)}
+                                                            checked={platforms.includes(platform as Platform)}
                                                             onChange={(e) => {
                                                                 if (e.target.checked) {
-                                                                    setPlatforms([...platforms, platform]);
+                                                                    setPlatforms([...platforms, platform as Platform]);
                                                                 } else {
                                                                     setPlatforms(platforms.filter(p => p !== platform));
                                                                 }
@@ -512,10 +527,10 @@ export default function Pricing() {
                                                 <label key={feature} className="flex items-center text-gray-300">
                                                     <input
                                                         type="checkbox"
-                                                        checked={features.includes(feature)}
+                                                        checked={features.includes(feature as Feature)}
                                                         onChange={(e) => {
                                                             if (e.target.checked) {
-                                                                setFeatures([...features, feature]);
+                                                                setFeatures([...features, feature as Feature]);
                                                             } else {
                                                                 setFeatures(features.filter(f => f !== feature));
                                                             }

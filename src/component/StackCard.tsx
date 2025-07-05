@@ -1,6 +1,7 @@
 'use client';
 import { useRef, useEffect, useState } from 'react';
 import StickyCards from './StickyCards';
+import Link from 'next/link';
 
 const serviceCards = [
   {
@@ -30,7 +31,7 @@ const serviceCards = [
 ];
 
 const StackCard = () => {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Dark purple gradient backgrounds with increasing intensity
@@ -151,16 +152,20 @@ const StackCard = () => {
               </h3>
               <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-300 to-white mx-auto mb-6 sm:mb-8 rounded-full"></div>
               <p className="text-lg sm:text-xl lg:text-2xl text-purple-100 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
-                Let's discuss how our expertise can drive innovation and growth for your organization. 
-                From concept to deployment, we're here to make your vision a reality.
+                Let&apos;s discuss how our expertise can drive innovation and growth for your organization. 
+                From concept to deployment, we&apos;re here to make your vision a reality.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                <button className="w-full sm:w-auto bg-gradient-to-r from-white to-purple-50 text-purple-700 px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:from-purple-50 hover:to-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
-                  Start Your Project
-                </button>
-                <button className="w-full sm:w-auto border-2 border-white text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:bg-white hover:text-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
-                  View Our Work
-                </button>
+                <Link href="/pricing">
+                  <button className="w-full sm:w-auto bg-gradient-to-r from-white to-purple-50 text-purple-700 px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:from-purple-50 hover:to-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
+                    Start Your Project
+                  </button>
+                </Link>
+                <Link href="/about-us">
+                  <button className="w-full sm:w-auto border-2 border-white text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold hover:bg-white hover:text-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
+                    View Our Work
+                  </button>
+                </Link>
               </div>
               
               {/* Additional features showcase */}
