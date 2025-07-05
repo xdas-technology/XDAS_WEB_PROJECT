@@ -115,7 +115,7 @@ function StickyCards({ index, scrollProgress, title, description, colour, textCo
           >
             <Image
               className="m-2 max-w-full h-auto"
-              src="/resource/humanface.gif"
+              src="/resource/humanFace.gif"
               alt="XDAS"
               width={400}
               height={400}
