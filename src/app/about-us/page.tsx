@@ -244,74 +244,62 @@ export default function AboutUs() {
                 </section>
 
                 {/* Team Section */}
-                <section>
-                    <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
-                        Our Team
-                    </h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div className="group">
-                            <div className="relative bg-gradient-to-br from-gray-900 to-black border border-purple-500/30 p-8 rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 text-center">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-purple-300/5 rounded-xl"></div>
-                                <div className="relative z-10">
-                                    <div className="w-24 h-24 mx-auto mb-4 relative overflow-hidden rounded-full border-2 border-purple-500 shadow-lg">
-                                        <Image
-                                            src="/team/ayaan-khan.jpg"
-                                            alt="Ayaan Khan"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <h3 className="text-xl font-semibold mb-2 text-white">Ayaan Khan</h3>
-                                    <p className="text-purple-400 mb-2 font-medium">CEO & Founder</p>
-                                    <p className="text-sm text-gray-400">Leading innovation in technology solutions & Architecture</p>
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
-                            </div>
-                        </div>
-                        
-                        <div className="group">
-                            <div className="relative bg-gradient-to-br from-gray-900 to-black border border-purple-500/30 p-8 rounded-xl shadow-2xl hover:shadow-purple-400/20 transition-all duration-300 hover:scale-105 text-center">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-purple-300/5 rounded-xl"></div>
-                                <div className="relative z-10">
-                                    <div className="w-24 h-24 mx-auto mb-4 relative overflow-hidden rounded-full border-2 border-purple-500 shadow-lg">
-                                        <Image
-                                            src="/team/aleeza.jpg"
-                                            alt="Aleeza"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <h3 className="text-xl font-semibold mb-2 text-white">Aleeza</h3>
-                                    <p className="text-purple-300 mb-2 font-medium">CTO & Co-Founder</p>
-                                    <p className="text-sm text-gray-400">Expert in software development</p>
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
-                            </div>
-                        </div>
-                        
-                        <div className="group">
-                            <div className="relative bg-gradient-to-br from-gray-900 to-black border border-purple-500/30 p-8 rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 text-center">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-purple-300/5 rounded-xl"></div>
-                                <div className="relative z-10">
-                                    <div className="w-24 h-24 mx-auto mb-4 relative overflow-hidden rounded-full border-2 border-purple-500 shadow-lg">
-                                        <Image
-                                            
-                                            src="/team/divyansh-mishra.jpg"
-                                            alt="Divyansh Mishra"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <h3 className="text-xl font-semibold mb-2 text-white" >Divyansh Mishra</h3>
-                                    <p className="text-purple-400 mb-2 font-medium">COO & Co-Founder </p>
-                                    <p className="text-sm text-gray-400">Expert in Development & Team Management</p>
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
-                            </div>
-                        </div>
+              
+
+{/* Team Section */}
+<section className="mb-16">
+    <h2 className="text-3xl font-bold mb-10 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent text-center">
+        Meet Our Leadership
+    </h2>
+    <div className="grid md:grid-cols-2 gap-12 justify-center">
+        {/* COO Card - Left */}
+        <div className="group">
+            <div className="relative bg-gradient-to-br from-gray-900 to-black border border-purple-500/30 p-8 rounded-xl shadow-2xl hover:shadow-purple-400/20 transition-all duration-300 hover:scale-105 text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-purple-300/5 rounded-xl"></div>
+                <div className="relative z-10">
+                    <div className="w-24 h-24 mx-auto mb-4 relative overflow-hidden rounded-full border-2 border-purple-500 shadow-lg">
+                        <Image
+                            src="/team/divyansh-mishra.jpg"
+                            alt="COO Name"
+                            fill
+                            className="object-cover"
+                        />
                     </div>
-                </section>
+                    <h3 className="text-xl font-semibold mb-2 text-white">COO Name</h3>
+                    <p className="text-purple-400 mb-2 font-medium">Chief Operating Officer</p>
+                    <p className="text-sm text-gray-400">Driving operational excellence and business growth.</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
             </div>
         </div>
+        {/* CTO Card - Right */}
+        <div className="group">
+            <div className="relative bg-gradient-to-br from-gray-900 to-black border border-purple-500/30 p-8 rounded-xl shadow-2xl hover:shadow-purple-400/20 transition-all duration-300 hover:scale-105 text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-purple-300/5 rounded-xl"></div>
+                <div className="relative z-10">
+                    <div className="w-24 h-24 mx-auto mb-4 relative overflow-hidden rounded-full border-2 border-purple-500 shadow-lg">
+                        <Image
+                            src="/team/aleeza.jpg"
+                            alt="CTO Name"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">CTO Name</h3>
+                    <p className="text-purple-400 mb-2 font-medium">Chief Technology Officer</p>
+                    <p className="text-sm text-gray-400">Leading technology strategy and innovation.</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            </div>
+        </div>
+                    
+                
+           
+     
     );
 }
