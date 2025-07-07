@@ -164,7 +164,7 @@ const SocilasAndLinks = () => {
                 <span className="mr-3">💼</span>
                 LinkedIn
               </a>
-              <a 
+              {/* <a 
                 href="https://github.com/xdas-technology" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -172,7 +172,7 @@ const SocilasAndLinks = () => {
               >
                 <span className="mr-3">🐱</span>
                 GitHub
-              </a>
+              </a> */}
               {/* <a 
                 href="https://discord.gg/xdas-tech" 
                 target="_blank" 
