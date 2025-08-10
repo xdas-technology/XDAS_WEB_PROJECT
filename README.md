@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![XDAS Technology Logo](public/logo/xdas-logo.png)
+
 
 **Where Innovation Meets Excellence**
 
